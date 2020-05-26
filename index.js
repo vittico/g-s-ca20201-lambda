@@ -1,5 +1,6 @@
 var AWS = require('aws-sdk');
 var s3 = new AWS.S3();
+const http = require('http');
 
 exports.handler = (event, context, callback) => {
     var bucketName = process.env.bucketName;
@@ -14,6 +15,12 @@ exports.handler = (event, context, callback) => {
         else
             console.log("He creado coorrectamente el obbjeto: " + bucketName + "/" + keyName);
     });
+
+    // el get al acs
+    const req = http.request( process.env.ecsurl, (resp) => {
+        console.log(process.env.ecsurl);
+    });
+
 };
 
 function getKeyName(folder, filename) {

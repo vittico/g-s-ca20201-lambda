@@ -2,7 +2,7 @@
 ## Use:
 * Create a Lambda from scratch
 * Node stack
-* Environment variables bucketName, folder & filename
+* Environment variables bucketName, folder, filename & ecsurl
 * Adjust the default exec role, grant S3 access
 * test!
 
